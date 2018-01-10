@@ -29,4 +29,8 @@ public class Service {
 	public void deleteMovie(int movieToDelete) {
 		movieMap.remove(movieToDelete);
 	}
+	
+	public int findMovieByGenre(String genre) {
+		return (int) movieMap.values().stream().filter(a -> a.getGenre().equals(genre)).count();
+	}
 }
